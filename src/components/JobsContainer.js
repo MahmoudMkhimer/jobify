@@ -6,9 +6,10 @@ import { Loading, PageBtnContainer } from "./index";
 import { getAllJobs } from "../featurs/alljobs/allJobsSlice";
 
 const JobsContainer = () => {
+	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(getAllJobs());
-	}, []);
+	});
 	const {
 		jobs,
 		isLoading,
@@ -25,7 +26,7 @@ const JobsContainer = () => {
 		dispatch(getAllJobs());
 		// eslint-disable-next-line
 	}, [page, search, searchStatus, searchType, sort]);
-	const dispatch = useDispatch();
+	
 
 	if (isLoading) return <Loading center />;
 	if (jobs.length === 0) {
