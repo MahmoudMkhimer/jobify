@@ -9,7 +9,7 @@ const JobsContainer = () => {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(getAllJobs());
-	});
+	},[]);
 	const {
 		jobs,
 		isLoading,
