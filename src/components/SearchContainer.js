@@ -13,7 +13,7 @@ const SearchContainer = () => {
 		const value = e.target.value;
 		dispatch(handleChange({ name, value }));
 	};
-	const debounce = () => {
+	const debounce = useCallback(() => {
 		let timeoutID;
 		return (e) => {
 			setLocalSearch(e.target.value);
@@ -27,7 +27,7 @@ const SearchContainer = () => {
 				);
 			}, 1000);
 		};
-	};
+	}, [dispatch]);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -35,7 +35,7 @@ const SearchContainer = () => {
 		dispatch(clearFilters());
 	};
 
-	const optimizedDebounce = useMemo(() => debounce());
+	const optimizedDebounce = useMemo(() => debounce(),[debounce]);
 	const { jobTypeOptions, statusOptions } = useSelector((state) => state.job);
 	return (
 		<Wrapper>
