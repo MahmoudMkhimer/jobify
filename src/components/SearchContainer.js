@@ -5,7 +5,7 @@ import { clearFilters, handleChange } from "../featurs/alljobs/allJobsSlice";
 import { useState, useMemo } from "react";
 const SearchContainer = () => {
 	const [localSearch, setLocalSearch] = useState("");
-	const { isLoading, search, searchStatus, searchType, sort, sortOptions } =
+	const { isLoading, searchStatus, searchType, sort, sortOptions } =
 		useSelector((store) => store.allJobs);
 	const dispatch = useDispatch();
 	const handleSearch = (e) => {
