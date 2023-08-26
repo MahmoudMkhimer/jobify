@@ -2,7 +2,7 @@ import { FormRow, FormRowSelect } from ".";
 import Wrapper from "../assets/wrappers/SearchContainer";
 import { useSelector, useDispatch } from "react-redux";
 import { clearFilters, handleChange } from "../featurs/alljobs/allJobsSlice";
-import { useState, useMemo } from "react";
+import { useState, useMemo,useCallback } from "react";
 const SearchContainer = () => {
 	const [localSearch, setLocalSearch] = useState("");
 	const { isLoading, searchStatus, searchType, sort, sortOptions } =
