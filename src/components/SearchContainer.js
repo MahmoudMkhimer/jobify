@@ -35,7 +35,7 @@ const SearchContainer = () => {
 		dispatch(clearFilters());
 	};
 
-	const optimizedDebounce = useMemo(() => debounce(), [debounce]);
+	const optimizedDebounce = useMemo(() => debounce());
 	const { jobTypeOptions, statusOptions } = useSelector((state) => state.job);
 	return (
 		<Wrapper>
