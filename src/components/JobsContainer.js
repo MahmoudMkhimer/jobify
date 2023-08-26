@@ -16,7 +16,7 @@ const JobsContainer = () => {
 		page,
 		totalJobs,
 		numOfPages,
-		
+		search,
 		searchStatus,
 		searchType,
 		sort,
